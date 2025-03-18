@@ -2,6 +2,7 @@ import "dotenv/config"
 import logger from "morgan"
 import express from "express"
 import nunjucks from "nunjucks"
+import bcrypt from "bcrypt"
 
 const app = express()
 const port = 3000
@@ -23,4 +24,10 @@ app.get("/", (req, res) => {
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
+})
+
+
+let myPlaintextPassword = "SecurePass100"
+bcrpyt.hash(myPlaintextPassword, 10, function(err, hash) {
+  console.log(hash)
 })
