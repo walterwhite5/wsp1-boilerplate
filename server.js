@@ -3,7 +3,7 @@ import logger from "morgan"
 import express from "express"
 import nunjucks from "nunjucks"
 import session from "express-session"
-import bcrypt from "bcrypt"
+import bcrypt, { hash } from "bcrypt"
 
 
 const app = express()
@@ -55,6 +55,9 @@ app.get("/", (req, res) => {
 app.get("/login", (req,res) => {
   // visa loginformulär
 })
+
+
+
 
 app.post("/login", (req, res) => {
   // req.body
